@@ -1,6 +1,6 @@
 {
   "name": "hotel-clerk",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Hotel Clerk helps you run your hotel from a convenient menubar app",
   "main": "index.js",
   "scripts": {
