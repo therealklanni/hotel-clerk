@@ -1,0 +1,24 @@
+{
+  "name": "hotel-clerk",
+  "version": "0.0.0",
+  "description": "Hotel Clerk manages your hotel from a convenient menubar",
+  "main": "index.js",
+  "scripts": {
+    "build": "electron-packager . \"Hotel Clerk\" --platform=darwin --arch=x64 --version=0.30.0 --overwrite --out=dist",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hotel"
+  ],
+  "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-debug": "^0.1.1",
+    "electron-packager": "^5.0.1",
+    "electron-prebuilt": "^0.30.1"
+  },
+  "dependencies": {
+    "menubar": "^2.0.16"
+  }
+}
