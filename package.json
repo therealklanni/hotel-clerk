@@ -4,8 +4,8 @@
   "description": "Hotel Clerk helps you run your hotel from a convenient menubar app",
   "main": "index.js",
   "scripts": {
-    "build": "electron-packager . \"Hotel Clerk\" --platform=darwin --arch=x64 --version=0.30.0 --overwrite --out=dist --icon=hotel",
-    "clean": "rm dist/Hotel-Clerk.zip",
+    "build": "electron-packager . \"Hotel Clerk\" --platform=darwin --arch=x64 --version=0.30.0 --overwrite --out=dist --icon=hotel --ignore=dist --ignore=hotel.* --ignore=sips --prune",
+    "clean": "rimraf dist/Hotel-Clerk.zip dist/tmp",
     "release": "npm run clean && cd dist/Hotel\\ Clerk-darwin-x64 && zip -rXq ../Hotel-Clerk.zip *",
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +17,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron-packager": "^5.0.1",
-    "electron-prebuilt": "^0.30.1"
+    "electron-prebuilt": "^0.30.1",
+    "rimraf": "^2.4.2"
   },
   "dependencies": {
     "menubar": "^2.0.16"
