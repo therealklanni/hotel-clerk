@@ -1,7 +1,8 @@
 # Hotel Clerk
 
-[Hotel][hotel] Clerk will assist you with managing your Hotel reservations.
-(Hotel Clerk is a convenient menubar app for use with [hotel][hotel])
+Hotel Clerk will assist you with managing your local dev servers in [Hotel][hotel] via a convenient menubar app.
+
+> Requires [Hotel][hotel] being installed and running
 
 ## Install
 
