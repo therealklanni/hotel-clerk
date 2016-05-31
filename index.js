@@ -7,6 +7,7 @@ const hotelClerk = menubar({
   dir: __dirname + '/app',
   height: 300,
   width: 364,
+  'node-integration': false,
   'preload-window': true
 });
 
