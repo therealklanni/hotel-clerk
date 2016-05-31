@@ -14,31 +14,47 @@ const hotelClerk = menubar({
 hotelClerk.on('after-create-window', function () {
   const html = hotelClerk.window.webContents;
 
-  const updateLinks = function () {
-    html.executeJavaScript(`
-      var shell = require('shell');
-      Array.prototype.forEach.call(document.links, (link) => {
-        link.onclick = function (event) {
-          event.preventDefault();
-          // FIXME: Somehow the README target is not always an <a> element…
-          var target = event.target;
-          while (!target.href && target.parentElement) {
-            target = target.parentElement;
-          }
-          if (target.href) {
-            shell.openExternal(target.href);
-          }
-        };
-      });
-    `);
+  html.on('will-navigate', function (event, url) {
+    event.preventDefault();
+    require('shell').openExternal(url);
+  });
+
+  /*
+  const debugEvent = function (name) {
+    html.on(name, function () {
+      console.info(name);
+    })
   };
 
-  //html.openDevTools({mode: 'undocked'});
+  debugEvent('did-finish-load');
+  debugEvent('did-fail-load');
+  debugEvent('did-frame-finish-load');
+  debugEvent('did-start-loading');
+  debugEvent('did-stop-loading');
+  debugEvent('did-get-response-details');
+  debugEvent('did-get-redirect-request');
+  debugEvent('dom-ready');
+  debugEvent('page-favicon-updated');
+  debugEvent('new-window');
+  debugEvent('will-navigate');
+  debugEvent('did-navigate');
+  debugEvent('did-navigate-in-page');
+  debugEvent('crashed');
+  debugEvent('plugin-crashed');
+  debugEvent('destroyed');
+  debugEvent('devtools-opened');
+  debugEvent('devtools-closed');
+  debugEvent('devtools-focused');
+  debugEvent('certificate-error');
+  debugEvent('select-client-certificate');
+  debugEvent('login');
+  debugEvent('found-in-page');
+  debugEvent('media-started-playing');
+  debugEvent('media-paused');
+  debugEvent('did-change-theme-color');
+  debugEvent('cursor-changed');
+  debugEvent('context-menu');
 
-  html.on('dom-ready', updateLinks);
-  html.on('did-get-response-details', updateLinks);
-
-  html.on('will-navigate', function (event) {
-    event.preventDefault();
-  });
+  html.openDevTools({mode: 'undocked'});
+  */
 });
