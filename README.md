@@ -12,6 +12,10 @@ Download the [latest release](https://github.com/therealklanni/hotel-clerk/relea
 
 Simply click the Hotel Clerk menubar icon to open the [hotel][hotel] interface.
 
+# Contributing
+
+
+
 # License
 
 MIT © Kevin Lanni
