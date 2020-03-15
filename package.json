@@ -4,7 +4,7 @@
   "description": "Hotel Clerk helps you run your hotel from a convenient menubar app",
   "main": "index.js",
   "scripts": {
-    "build": "electron-packager . \"Hotel Clerk\" --platform=darwin --arch=x64 --version=0.36.12 --overwrite --out=dist --icon=hotel --ignore=dist --ignore=hotel.* --ignore=sips --prune",
+    "build": "electron-packager . \"Hotel Clerk\" --platform=darwin --arch=x64 --app-version=0.36.12 --overwrite --out=dist --icon=hotel --ignore=dist --ignore=hotel.* --ignore=sips --prune",
     "clean": "rimraf dist/Hotel-Clerk.zip dist/tmp",
     "release": "npm run clean && cd dist/Hotel\\ Clerk-darwin-x64 && zip -rXq ../Hotel-Clerk.zip *",
     "start": "electron .",
@@ -16,11 +16,11 @@
   "author": "Kevin Lanni <therealklanni@gmail.com> (https://github.com/therealklanni)",
   "license": "MIT",
   "devDependencies": {
-    "electron-packager": "^12.0.1",
-    "electron": "^1.8.6",
-    "rimraf": "^2.4.2"
+    "electron-packager": "^14.2.1",
+    "electron": "^8.1.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "menubar": "^4.1.0"
+    "menubar": "^8.0.1"
   }
 }
